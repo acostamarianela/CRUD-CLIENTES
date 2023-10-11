@@ -1,14 +1,15 @@
 from clasePersona import Persona
-import firebase_admin  # Asegúrate de importar firebase_admin en tu clase
 from firebase_admin import credentials
 from firebase_admin import db
 
+# Se hereda la clase persona para crear al Cliente
 class Cliente(Persona):
     def __init__(self, nombre='', apellido='', email='', domicilio='', telefono='', dni=''):
         super().__init__(nombre, apellido, email, domicilio, telefono)
         self.__idCliente = None
         self.__dni = dni
     
+    #ENCAPSULAMIENTO Y ABSTRACCION
     def getIdCliente(self):
         return self.__idCliente
     
@@ -93,6 +94,7 @@ class Cliente(Persona):
         ref = db.reference('/Clientes')
         ref.child(clienteId).delete()
 
+    #POLIMORFISMO
     def obtenerDatos(self):
         dni = self.getDNI()
         return f'{super().obtenerDatos()}, DNI: {dni}'

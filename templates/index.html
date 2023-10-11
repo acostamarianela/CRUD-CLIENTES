@@ -6,11 +6,14 @@
     <title>Gestión de Clientes</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/index.css') }}">
 </head>
+<header> 
+    <p>©Acosta Marianela 2023</p>
+</header>
 <body>
     <div class="container">
         <h1>Gestión de Clientes</h1>
 
-        <!-- Formulario de búsqueda por ID en el centro -->
+        <!-- Formulario de búsqueda por ID-->
         <div class="search-form">
             <form method="GET" action="/buscarCliente">
                 <label for="clienteDNI">Buscar Cliente por DNI:</label>
@@ -19,7 +22,6 @@
             </form>
         </div>
 
-        <!-- Enlaces a un costado -->
         <div class="side-links">
             <a href="{{url_for('agregarCliente')}}">Agregar Nuevo Cliente</a>
             <a href="{{url_for('listarClientes')}}">Listar Clientes</a>

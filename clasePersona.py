@@ -1,4 +1,6 @@
 class Persona:
+    #CLASE ABSTRACTA
+    #inicializo los atributos
     def __init__(self, nombre, apellido, email, domicilio, telefono):
         self.__nombre = nombre
         self.__apellido = apellido
@@ -6,6 +8,7 @@ class Persona:
         self.__telefono = telefono 
         self.__email = email
     
+    #ENCAPSULAMIENTO Y ABSTRACCIÓN
     def getNombre(self):
         return self.__nombre
     
@@ -36,6 +39,7 @@ class Persona:
     def setEmail(self, email):
         self.__email = email
     
+    #POLIMORFISMO
     def obtenerDatos(self):
         nombre = self.getNombre()
         apellido = self.getApellido()
