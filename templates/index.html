@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Clientes</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/index.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Clientes</h1>
+
+        <!-- Formulario de búsqueda por ID en el centro -->
+        <div class="search-form">
+            <form method="GET" action="/buscarCliente">
+                <label for="clienteDNI">Buscar Cliente por DNI:</label>
+                <input type="text" name="clienteDNI" id="clienteDNI">
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+
+        <!-- Enlaces a un costado -->
+        <div class="side-links">
+            <a href="{{url_for('agregarCliente')}}">Agregar Nuevo Cliente</a>
+            <a href="{{url_for('listarClientes')}}">Listar Clientes</a>
+        </div>
+    </div>
+</body>
+</html>
+
+</html>

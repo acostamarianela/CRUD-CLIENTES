@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Actualizar Cliente</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/modificarCliente.css') }}">
+    <h1>Modificar Datos</h1>
+</head>
+<body>
+    <form method="post" action="{{ url_for('modificarCliente', clienteId=cliente.getIdCliente()) }}">
+        <label for="nombre">Nombre</label>
+        <input type="text" name="nombre" value="{{ cliente.getNombre() }}" required><br>
+        <label for="apellido">Apellido</label>
+        <input type="text" name="apellido" value="{{ cliente.getApellido() }}" required><br>
+        <label for="email">Email</label>
+        <input type="text" name="email" value="{{ cliente.getEmail() }}" required><br>
+        <label for="domicilio">Domicilio</label>
+        <input type="text" name="domicilio" value="{{ cliente.getDomicilio() }}"><br>
+        <label for="telefono">Teléfono</label>
+        <input type="text" name="telefono" value="{{ cliente.getTelefono() }}"><br>
+        
+        <label for="dniCliente">DNI</label>
+        <input type="text" name="dniCliente" value="{{ cliente.getDNI() }}" required><br>
+        <input type="submit" value = "Actualizar Cliente">
+    </form>
+   
+    <a href="{{ url_for('index') }}">Volver a la página de inicio</a>
+</body>
+</html>
+

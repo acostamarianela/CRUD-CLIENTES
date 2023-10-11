@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalles del Cliente</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/mostrarCliente.css') }}">
+</head>
+<body>
+    <h1>Detalles del Cliente</h1>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo Electrónico</th>
+            <th>Domicilio</th>
+            <th>Telefono</th>
+            <th>DNI</th>
+            <th>Acciones</th>
+        </tr>
+        <tr>
+            <td>{{ cliente.getNombre() }}</td>
+            <td>{{ cliente.getApellido() }}</td>
+            <td>{{ cliente.getEmail() }}</td>
+            <td>{{ cliente.getDomicilio() }}</td>
+            <td>{{ cliente.getTelefono() }}</td>
+            
+            <td>{{ cliente.getDNI() }}</td>
+            
+            
+            <td>
+                <a href="{{ url_for('modificarCliente', clienteId=cliente.getIdCliente()) }}" class="btn btn-primary">Modificar Datos</a>
+
+                <!-- Botón para redireccionar a la página de eliminación -->
+                <a href="{{ url_for('eliminarCliente', clienteId=cliente.getIdCliente())}}"
+              onclick="return confirm('¿Está seguro de que desea eliminar este cliente?');">
+                    <button class="btn btn-delete">Eliminar Cliente</button>
+                </a>
+              
+            </td>
+        </tr>
+    </table>
+    <a href="/">Volver a la página de inicio</a>
+</body>
+</html>

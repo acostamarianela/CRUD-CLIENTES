@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Clientes</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/listarClientes.css') }}">
+</head>
+<body>
+    <h1>Lista de Clientes</h1>
+    
+    <a href="{{url_for('index')}}">Volver a la página de inicio</a>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo Electrónico</th>
+                    <th>Domicilio</th>
+                    <th>Teléfono</th>
+                    <th>DNI</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for cliente in clientes %}
+                    <tr>
+                        <td>{{ cliente.getNombre() }}</td>
+                        <td>{{ cliente.getApellido() }}</td>
+                        <td>{{ cliente.getEmail() }}</td>
+                        <td>{{ cliente.getDomicilio() }}</td>
+                        <td>{{ cliente.getTelefono() }}</td>
+                        <td>{{ cliente.getDNI() }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
